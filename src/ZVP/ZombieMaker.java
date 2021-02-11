@@ -1,3 +1,9 @@
+/**
+ * @author Mobina Hadavifar and AmirHossein Sarahang
+ * @version 1.0
+ * @since 2020
+ */
+
 package ZVP;
 
 public class ZombieMaker {
@@ -9,7 +15,7 @@ public class ZombieMaker {
     }
 
     public static Zombie getZombie(ZombieType type, GamePanel g, int line) {
-        Zombie zombie = new Zombie(g, line);
+//        Zombie zombie = new Zombie(g, line);
         switch (type) {
 //            case Zombie:
 //                zombie = new Zombie(g, line);
@@ -21,6 +27,6 @@ public class ZombieMaker {
 //                zombie = new ConeHeadZombie(g, line);
 //                break;
         }
-        return zombie;
+        return null;
     }
 }

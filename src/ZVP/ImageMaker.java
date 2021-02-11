@@ -1,4 +1,10 @@
 package ZVP;
+/**
+ * @author Mobina Hadavifar and AmirHossein Sarahang
+ * @version 1.0
+ * @since 2020
+ */
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -32,9 +38,9 @@ public class ImageMaker {
         FreezePeaImage = new ImageIcon(this.getClass().getResource("image/freezepea.png")).getImage();
         CherryBombImage = new ImageIcon(this.getClass().getResource("image/CherryBomb.gif")).getImage();
         GiantImage = new ImageIcon(this.getClass().getResource("image/walnut_full_life.gif")).getImage();
-        NormalZombieImage = new ImageIcon(this.getClass().getResource("image/zombie_normal.gif")).getImage();
-        ConeHeadZombieImage = new ImageIcon(this.getClass().getResource("image/coneheadzombie.gif")).getImage();
-        BucketHeadZombieImage = new ImageIcon(this.getClass().getResource("image/bucketheadzombie.gif")).getImage();
+        NormalZombieImage = new ImageIcon(this.getClass().getResource("image/zombie_normal2.gif")).getImage();
+        ConeHeadZombieImage = new ImageIcon(this.getClass().getResource("image/coneheadzombie2.gif")).getImage();
+        BucketHeadZombieImage = new ImageIcon(this.getClass().getResource("image/bucketheadzombie2.gif")).getImage();
 
     }
 

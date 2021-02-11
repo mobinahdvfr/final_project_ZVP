@@ -1,3 +1,9 @@
+/**
+ * @author Mobina Hadavifar and AmirHossein Sarahang
+ * @version 1.0
+ * @since 2020
+ */
+
 package ZVP;
 
 import javax.swing.*;
@@ -15,6 +21,17 @@ public class Sun extends JPanel implements MouseListener {
     private int Y2;
     private int sunTime;
 
+    /**
+     * first set Suns image and second set
+     * @param parent to gamePanel
+     * @param FirstX to FirstX bye setter method
+     * @param FirstY to FirstY bye setter method
+     * @param endY to endY bye setter method
+     *             and finally :
+     *             set SunTime
+     *             setOpaque
+     *             setLocation and addMouseListener
+     */
     public Sun(GamePanel parent, int FirstX, int FirstY,int endY) {
         this.Sun = new ImageIcon(this.getClass().getResource("image/sun.gif")).getImage();
         this.gp = parent;
@@ -57,6 +74,9 @@ public class Sun extends JPanel implements MouseListener {
         Y2 = y2;
     }
 
+    /**
+     * Move based on increasing y and set location
+     */
     public void move() {
 //        while (true){
             if (Y < Y2) {
@@ -66,24 +86,46 @@ public class Sun extends JPanel implements MouseListener {
 //        }
     }
 
+    /**
+     * setter of sun
+     * @param sun sun
+     */
     public void setSun(Image sun) {
         Sun = sun;
     }
 
+    /**
+     * getter of sun
+     * @return sunTime
+     */
     public int getSunTime() {
         return sunTime;
     }
 
+    /**
+     * setter of sun time
+     * @param sunTime suntTime
+     */
     public void setSunTime(int sunTime) {
         this.sunTime = sunTime;
     }
 
+    /**
+     * call paintPanel from super
+     * @param g Graphics
+     *        then draw image
+     */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(Sun, 0, 0, null);
     }
 
+    /**
+     * @param e MouseEvent
+     *          set sun score
+     *
+     */
     @Override
     public void mouseReleased(MouseEvent e) {
         gp.setSunScore(gp.getSunScore() + 25);

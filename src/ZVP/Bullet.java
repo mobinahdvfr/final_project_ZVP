@@ -1,5 +1,10 @@
-package ZVP;
 
+/**
+ * @author Mobina Hadavifar and AmirHossein Sarahang
+ * @version 1.0
+ * @since 2020
+ */
+package ZVP;
 import javax.swing.*;
 import java.awt.*;
 
@@ -14,6 +19,13 @@ public class Bullet extends JPanel {
         private int row;
         private double speed;
 
+    /**
+     * set
+     * @param gamePanel game panel
+     * @param x x
+     * @param row row
+     * @param harm harm
+     */
         public Bullet (GamePanel gamePanel, int x, int row, int harm){
             this.gamePanel = gamePanel;
             this.x = x;
@@ -22,14 +34,26 @@ public class Bullet extends JPanel {
             speed =3;
         }
 
+    /**
+     *
+     * @param image to set bukket image
+     */
         public void setImage (Image image){
             this.image = image;
         }
 
+    /**
+     * getter of x
+     * @return x
+     */
         public int getX (){
             return x;
         }
 
+    /**
+     *
+     * @return
+     */
         public Zombie attack (){
             Zombie z = null;
 //            for (int i = 0; i < gamePanel.getRowZombies(row).size(); i++) {
@@ -51,10 +75,18 @@ public class Bullet extends JPanel {
             return z;
         }
 
+    /**
+     *
+     * @param g tp draw image
+     */
         public void paintComponent (Graphics g){
             g.drawImage(image,0,0,null);
         }
 
+    /**
+     * getter of row
+     * @return row
+     */
         public int getRow (){
             return row;
         }
