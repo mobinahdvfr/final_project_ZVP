@@ -58,7 +58,7 @@ public class Zombie extends JPanel{
      Move based on decreasing x
      */
     public void move (){
-        x -= 5/speed;
+        x -= 4.5/speed;
         setLocation(x,y);
     }
 

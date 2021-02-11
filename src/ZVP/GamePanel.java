@@ -67,7 +67,7 @@ public class GamePanel extends JLayeredPane implements MouseMotionListener {
         startTime = System.currentTimeMillis();
         gameParts = new Timer ((30000) , (ActionEvent e) -> {
             counter++;
-            if (counter < 5){
+            if (counter < 6){
                 if (counter == 1) {
                     addRandomZombie();
                     makeZombie1 = new Timer((30000), (ActionEvent e2) -> {
@@ -75,41 +75,44 @@ public class GamePanel extends JLayeredPane implements MouseMotionListener {
                     });
                     makeZombie1.start();
                 }
-            } else if (counter < 11){
-                if (counter == 5) {
-                    if (System.currentTimeMillis() >= startTime + 145000) {
-                        makeZombie1.stop();
-                        System.out.println("jojojojojojoj");
-                    }
-//                    addRandomZombie();
-//                    addRandomZombie();
+            } else if (counter < 12){
+                if (counter == 6) {
+                    makeZombie1.stop();
+                    addRandomZombie();
+                    addRandomZombie();
                     makeZombie2 = new Timer((30000), (ActionEvent e2) -> {
                         addRandomZombie();
                         addRandomZombie();
                     });
                     makeZombie2.start();
                 }
-            } else if (counter < 16){
-                if (counter == 11) {
-                    if (System.currentTimeMillis() >= startTime + 325000) {
-                        makeZombie2.stop();
-                        System.out.println("asasasasasasasa");
-                    }
-//                    addRandomZombie();
-//                    addRandomZombie();
+            } else if (counter < 17){
+                if (counter == 12) {
+                    makeZombie2.stop();
+                    addRandomZombie();
+                    addRandomZombie();
                     makeZombie3 = new Timer((25000), (ActionEvent e2) -> {
                         addRandomZombie();
                         addRandomZombie();
                     });
                     makeZombie3.start();
                 }
-            }
-            if (System.currentTimeMillis() >= startTime + 475000) {
+            } else
                 makeZombie3.stop();
-                System.out.println("lmlmmlmlmlmlmlml");
-            }
         });
-        gameParts.start();
+//        gameParts.start();
+
+        Thread t = new Thread(){
+            public void run(){
+                try {
+                    Thread.sleep(20000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                gameParts.start();
+            }
+        };
+        t.start();
 
         makeSun= new Timer((isNormal?25000:30000), (ActionEvent e) -> {
             Sun sta = new Sun(this, random.nextInt(850)+100 , 0, random.nextInt(600)+100);
